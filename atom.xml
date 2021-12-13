@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>時雨のblog</title>
+  <title>時雨&#39;s blog</title>
   
   
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-13T02:14:37.790Z</updated>
+  <updated>2021-12-13T06:18:51.817Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Web安全加固（Windows）</title>
+    <link href="http://example.com/2021/12/13/Web%E5%AE%89%E5%85%A8%E5%8A%A0%E5%9B%BA%EF%BC%88Windows%EF%BC%89/"/>
+    <id>http://example.com/2021/12/13/Web%E5%AE%89%E5%85%A8%E5%8A%A0%E5%9B%BA%EF%BC%88Windows%EF%BC%89/</id>
+    <published>2021-12-13T03:03:56.000Z</published>
+    <updated>2021-12-13T06:18:51.817Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>        <h3 id="为了防止web中-mdb数据库文件非法下载请对Web配置文件进行安全加固"   >          <a href="#为了防止web中-mdb数据库文件非法下载请对Web配置文件进行安全加固" class="heading-link"><i class="fas fa-link"></i></a><a href="#为了防止web中-mdb数据库文件非法下载请对Web配置文件进行安全加固" class="headerlink" title="为了防止web中.mdb数据库文件非法下载请对Web配置文件进行安全加固"></a>为了防止web中.mdb数据库文件非法下载请对Web配置文件进行安全加固</h3>      <p>管理工具 &gt; IIS管理器 &gt; 网站 &gt; Default Web Site &gt; 请求筛选 &gt; 右键文件扩展名 &gt; 拒绝文件扩展名，添加扩展名.mdb</p><p><img src="D:\Typora\图片\winweb1.png" alt="1639366023569"></p></li><li>        <h3 id="限制目录执行权限，对picture-和-upload-目录是指执行权限为无"   >          <a href="#限制目录执行权限，对picture-和-upload-目录是指执行权限为无" class="heading-link"><i class="fas fa-link"></i></a><a href="#限制目录执行权限，对picture-和-upload-目录是指执行权限为无" class="headerlink" title="限制目录执行权限，对picture 和 upload 目录是指执行权限为无"></a>限制目录执行权限，对picture 和 upload 目录是指执行权限为无</h3>      <p>管理工具 &gt; IIS管理器 &gt; 网站 &gt; web &gt; picture/upload &gt; 梳理程序映射，右键空白处 &gt; 编辑功能权限，取消勾选<strong>执行</strong><img src="D:\Typora\图片\winweb2.png" alt="1639366231464"></p></li><li>        <h3 id="开启IIS的日志审计记录-日志文件保存格式为W3C-只记录日期、时间、客户IP地址、用户名、方法"   >          <a href="#开启IIS的日志审计记录-日志文件保存格式为W3C-只记录日期、时间、客户IP地址、用户名、方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#开启IIS的日志审计记录-日志文件保存格式为W3C-只记录日期、时间、客户IP地址、用户名、方法" class="headerlink" title="开启IIS的日志审计记录(日志文件保存格式为W3C,只记录日期、时间、客户IP地址、用户名、方法)"></a>开启IIS的日志审计记录(日志文件保存格式为W3C,只记录日期、时间、客户IP地址、用户名、方法)</h3>      <p>管理工具 &gt; IIS管理器 &gt; 网站 &gt; web &gt; 日志，格式选择W3C，点击选择字段，只勾选日期、时间、客户端IP地址、用户名、方法</p><p><img src="D:\Typora\图片\winweb3.png" alt="1639366410834"></p><p><img src="D:\Typora\图片\winweb4.png" alt="1639366448096"></p></li><li>        <h3 id="为了减轻网站负载，设置网站最大并发连接数为1000"   >          <a href="#为了减轻网站负载，设置网站最大并发连接数为1000" class="heading-link"><i class="fas fa-link"></i></a><a href="#为了减轻网站负载，设置网站最大并发连接数为1000" class="headerlink" title="为了减轻网站负载，设置网站最大并发连接数为1000"></a>为了减轻网站负载，设置网站最大并发连接数为1000</h3>      <p>管理工具 &gt; IIS管理器 &gt; 网站 &gt; 右侧-这是网站默认设置，设置限制连接数值为 <strong>1000</strong></p><p><img src="D:\Typora\图片\winweb5.png" alt="1639366495206"></p></li><li>        <h3 id="防止文件枚举漏洞枚举网络服务器根目录文件，禁止IIS短文件名泄露"   >          <a href="#防止文件枚举漏洞枚举网络服务器根目录文件，禁止IIS短文件名泄露" class="heading-link"><i class="fas fa-link"></i></a><a href="#防止文件枚举漏洞枚举网络服务器根目录文件，禁止IIS短文件名泄露" class="headerlink" title="防止文件枚举漏洞枚举网络服务器根目录文件，禁止IIS短文件名泄露"></a>防止文件枚举漏洞枚举网络服务器根目录文件，禁止IIS短文件名泄露</h3>      <p>CMD 执行命令 fsutil behavior set disable8dot3 1</p><p><img src="D:\Typora\图片\winweb6.png" alt="1639366549705"></p></li><li>        <h3 id="关闭IIS的WebDAV功能增强网站的安全性"   >          <a href="#关闭IIS的WebDAV功能增强网站的安全性" class="heading-link"><i class="fas fa-link"></i></a><a href="#关闭IIS的WebDAV功能增强网站的安全性" class="headerlink" title="关闭IIS的WebDAV功能增强网站的安全性"></a>关闭IIS的WebDAV功能增强网站的安全性</h3>      <p>管理工具 &gt; IIS管理器 &gt;主机名(WIN-242GA01GJ9K) &gt; ISAPI 和 CGI 限制，右键WebDav，点击拒绝</p><p><img src="D:\Typora\图片\7.png" alt="1639366616275"></p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;
+        &lt;h3 id=&quot;为了防止web中-mdb数据库文件非法下载请对Web配置文件进行安全加固&quot;   &gt;
+          &lt;a href=&quot;#为了防止web中-mdb数据库文件非法下载请对Web配置文件进行安全加固&quot; class=&quot;heading</summary>
+      
+    
+    
+    
+    
+    <category term="安全加固" scheme="http://example.com/tags/%E5%AE%89%E5%85%A8%E5%8A%A0%E5%9B%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>登录安全加固（Windows）</title>
