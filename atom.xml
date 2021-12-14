@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-13T13:52:31.842Z</updated>
+  <updated>2021-12-14T00:28:11.115Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,18 +21,20 @@
     <link href="http://example.com/2021/12/13/Linux%E7%99%BB%E5%BD%95%E5%8A%A0%E5%9B%BA/"/>
     <id>http://example.com/2021/12/13/Linux%E7%99%BB%E5%BD%95%E5%8A%A0%E5%9B%BA/</id>
     <published>2021-12-13T12:40:49.000Z</published>
-    <updated>2021-12-13T13:52:31.842Z</updated>
+    <updated>2021-12-14T00:28:11.115Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>        <h3 id="密码策略"   >          <a href="#密码策略" class="heading-link"><i class="fas fa-link"></i></a><a href="#密码策略" class="headerlink" title="密码策略"></a>密码策略</h3>      <ul><li><p>修改 /etc/login.defs 文件</p><figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/login.defs</span><br></pre></td></tr></table></div></figure><figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PASS_MAX_DAYS 90 <span class="comment">#密码最长过期天数</span></span><br><span class="line">PASS_MIN_DAYS 80 <span class="comment">#密码最小过期天数</span></span><br><span class="line">PASS_MINA_LEN 10 <span class="comment">#密码最小长度</span></span><br><span class="line">PASS_WARN_AGE 7 <span class="comment">#密码过期警告天数</span></span><br></pre></td></tr></table></div></figure></li><li><p>修改/etc/pam.d/system-auth文件</p><p>在 password requisite pam_cracklib.so 一行换成如下内容：</p><figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">password requisite pam_cracklib.so retry=5 difok=3 minlen=10 ucredit=-1 lcredit=-3 dcredit=-3 dictpath=/usr/share/cracklib/pw_dict</span><br><span class="line"><span class="comment">#参数含义</span></span><br><span class="line"><span class="comment">#retry:尝试次数5 | difok：最少不同字符：3 | minlen:最小密码长度10 </span></span><br><span class="line"><span class="comment">#ucredit:最少大写字母1 | lcredit:最少小写字母3 | dcredit:最少数字3</span></span><br><span class="line"><span class="comment">#字典位置: /usr/share/cracklib/pw_dict</span></span><br></pre></td></tr></table></div></figure></li></ul></li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li>        <h3 id="密码策略"   >          <a href="#密码策略" class="heading-link"><i class="fas fa-link"></i></a><a href="#密码策略" class="headerlink" title="密码策略"></a>密码策略</h3>      <ul><li><p>修改 /etc/login.defs 文件</p><figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/login.defs</span><br></pre></td></tr></table></div></figure><figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PASS_MAX_DAYS 90 <span class="comment">#密码最长过期天数</span></span><br><span class="line">PASS_MIN_DAYS 80 <span class="comment">#密码最小过期天数</span></span><br><span class="line">PASS_MINA_LEN 10 <span class="comment">#密码最小长度</span></span><br><span class="line">PASS_WARN_AGE 7 <span class="comment">#密码过期警告天数</span></span><br></pre></td></tr></table></div></figure><span id="more"></span></li><li><p>修改/etc/pam.d/system-auth文件</p><p>在 password requisite pam_cracklib.so 一行换成如下内容：</p><figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">password requisite pam_cracklib.so retry=5 difok=3 minlen=10 ucredit=-1 lcredit=-3 dcredit=-3 dictpath=/usr/share/cracklib/pw_dict</span><br><span class="line"><span class="comment">#参数含义</span></span><br><span class="line"><span class="comment">#retry:尝试次数5 | difok：最少不同字符：3 | minlen:最小密码长度10 </span></span><br><span class="line"><span class="comment">#ucredit:最少大写字母1 | lcredit:最少小写字母3 | dcredit:最少数字3</span></span><br><span class="line"><span class="comment">#字典位置: /usr/share/cracklib/pw_dict</span></span><br></pre></td></tr></table></div></figure></li></ul></li></ol>]]></content>
     
     
-      
-      
     <summary type="html">&lt;ol&gt;
 &lt;li&gt;
         &lt;h3 id=&quot;密码策略&quot;   &gt;
-          &lt;a href=&quot;#密码策略&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#密码策略&quot; class=&quot;hea</summary>
-      
+          &lt;a href=&quot;#密码策略&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#密码策略&quot; class=&quot;headerlink&quot; title=&quot;密码策略&quot;&gt;&lt;/a&gt;密码策略&lt;/h3&gt;
+      &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;修改 /etc/login.defs 文件&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;div class=&quot;table-container&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vim /etc/login.defs&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;div class=&quot;table-container&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;PASS_MAX_DAYS 90 &lt;span class=&quot;comment&quot;&gt;#密码最长过期天数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;PASS_MIN_DAYS 80 &lt;span class=&quot;comment&quot;&gt;#密码最小过期天数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;PASS_MINA_LEN 10 &lt;span class=&quot;comment&quot;&gt;#密码最小长度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;PASS_WARN_AGE 7 &lt;span class=&quot;comment&quot;&gt;#密码过期警告天数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;</summary>
     
     
     
