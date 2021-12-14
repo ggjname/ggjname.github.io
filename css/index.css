@@ -934,7 +934,6 @@ body::after {
   width: 9em;
   white-space: nowrap;
   font-size: 1.2rem;
-  border-right: 2px solid transparent;
   -webkit-animation: typing 3.5s steps(15, end), blink-caret 0.75s step-end infinite;
   -moz-animation: typing 3.5s steps(15, end), blink-caret 0.75s step-end infinite;
   -o-animation: typing 3.5s steps(15, end), blink-caret 0.75s step-end infinite;
