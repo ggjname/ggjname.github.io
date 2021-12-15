@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>時雨&#39;s blog</title>
+  <title>時雨|Blog</title>
   
-  <subtitle>记录一些学习的笔记</subtitle>
+  <subtitle>有理想的人，生活总是火热的。 --斯大林</subtitle>
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
