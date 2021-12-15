@@ -70,7 +70,7 @@ $(document).ready(function () {
       var nightMode = false
       try {
         if (parseInt(Stun.utils.Cookies().get(NIGHT_MODE_COOKIES_KEY))) {
-          nightMode = true
+          nightMode = true /*默认夜晚模式*/
         }
       } catch (err) {
         /* empty */
